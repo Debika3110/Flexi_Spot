@@ -38,10 +38,10 @@ export default function LoginPage() {
     });
 
     if (response.data && response.data.token) {
-      // Save the JWT token
+      
       localStorage.setItem("token", response.data.token);
 
-      // ✅ Make the protected request immediately after login
+      
       const token = response.data.token;
       axios.get("http://localhost:8080/api/dashboard", {
         headers: {
@@ -55,7 +55,7 @@ export default function LoginPage() {
         console.error("Unauthorized or Forbidden", err);
       });
 
-      // Show success and redirect based on role
+      
       alert("Login successful!");
       const userRole = response.data.role;
       if (userRole === "ADMIN") {
