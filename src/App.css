@@ -1,0 +1,37 @@
+.perspective {
+  perspective: 1500px;
+}
+
+.flip-container {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-container.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flip-side.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotateY(0deg);
+}
+
+.flip-side.back {
+  transform: rotateY(180deg);
+}

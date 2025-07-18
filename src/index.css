@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply font-sans;
+}
+@layer utilities {
+  .bg-blue-violet {
+    @apply bg-gradient-to-r from-blue-400 to-blue-700;
+  }
+}
+@layer utilities {
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 300ms ease;
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
+  }
+}
